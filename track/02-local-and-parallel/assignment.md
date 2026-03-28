@@ -1,8 +1,10 @@
 ---
 slug: local-and-parallel
+id: ua21dvaal0vo
 type: challenge
 title: 'Exercise 2: Parallel Fan-Out + Local Activities'
-teaser: Fan out warehouse checks concurrently and move fast in-process steps to local activities.
+teaser: Fan out warehouse checks concurrently and move fast in-process steps to local
+  activities.
 notes:
 - type: text
   contents: |-
@@ -23,26 +25,31 @@ notes:
 
     Hit **Start** when you're ready.
 tabs:
-- title: VS Code
+- id: pph7nex6jhwo
+  title: VS Code
   type: service
   hostname: workshop-host
   path: ?folder=/workspace/exercise&openFile=/workspace/exercise/inventory_workflow.go&openFile=/workspace/exercise/fulfillment_workflow.go
   port: 8443
-- title: Terminal 1 - Worker
+- id: y7skzxzvb4a9
+  title: Terminal 1 - Worker
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Terminal 2 - Starter
+- id: gwuczbadbo2r
+  title: Terminal 2 - Starter
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Temporal Web UI
+- id: fpdhctfqkupf
+  title: Temporal Web UI
   type: service
   hostname: workshop-host
   path: /
   port: 8080
 difficulty: basic
 timelimit: 3600
+enhanced_loading: null
 ---
 
 ## Exercise 2: Parallel Fan-Out + Local Activities

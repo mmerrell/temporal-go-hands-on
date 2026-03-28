@@ -1,4 +1,5 @@
 slug: temporal-go-hands-on
+id: thkynjg9lgsp
 title: Temporal Go SDK – Hands-On Lab
 teaser: Build a durable order-fulfillment system with the Temporal Go SDK — child
   workflows, parallel fan-out, and local activities.
@@ -32,4 +33,5 @@ lab_config:
   hideStopButton: false
   default_layout: AssignmentLeft
   default_layout_sidebar_size: 35
+checksum: "15248634208067158660"
 enhanced_loading: false
