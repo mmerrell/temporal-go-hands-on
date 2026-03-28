@@ -1,0 +1,62 @@
+#!/bin/bash
+EXERCISE_DIR="/workspace/exercise"
+INVENTORY="$EXERCISE_DIR/inventory_workflow.go"
+FULFILLMENT="$EXERCISE_DIR/fulfillment_workflow.go"
+
+fail() { echo "FAIL: $1"; exit 1; }
+pass() { echo "PASS: $1"; }
+
+if ! grep -q "workflow.NewChannel" "$INVENTORY"; then
+  fail "inventory_workflow.go is missing workflow.NewChannel(). Create a results channel for goroutine output."
+fi
+pass "workflow.NewChannel present"
+
+if ! grep -q "workflow.Go" "$INVENTORY"; then
+  fail "inventory_workflow.go is missing workflow.Go(). Launch one goroutine per warehouse."
+fi
+pass "workflow.Go goroutines present"
+
+if ! grep -q "resultCh.Send\|\.Send(" "$INVENTORY"; then
+  fail "inventory_workflow.go goroutines are not sending results to the channel."
+fi
+pass "Channel sends present"
+
+if ! grep -q "resultCh.Receive\|\.Receive(" "$INVENTORY"; then
+  fail "inventory_workflow.go is missing channel receives. Collect one result per goroutine launched."
+fi
+pass "Channel receives present"
+
+if ! grep -q "OutOfStock" "$INVENTORY"; then
+  fail "inventory_workflow.go is missing a non-retryable ApplicationError with type \"OutOfStock\"."
+fi
+pass "OutOfStock error present"
+
+if ! grep -q "LocalActivityOptions" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is missing workflow.LocalActivityOptions. Add local activity options for ValidateOrder and FraudCheck."
+fi
+pass "LocalActivityOptions present"
+
+if ! grep -q "ExecuteLocalActivity" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is missing workflow.ExecuteLocalActivity() calls."
+fi
+pass "ExecuteLocalActivity calls present"
+
+if ! grep -q "ValidateOrder" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is not calling ValidateOrder as a local activity."
+fi
+pass "ValidateOrder called"
+
+if ! grep -q "FraudCheck" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is not calling FraudCheck as a local activity."
+fi
+pass "FraudCheck called"
+
+echo "Running go build..."
+cd "$EXERCISE_DIR"
+if ! go build ./... 2>&1; then
+  fail "Project does not build. Fix compilation errors above and try again."
+fi
+pass "Project builds successfully"
+
+echo ""
+echo "All checks passed! Compare the parallel timestamps in inventory-ORD-2001 vs Exercise 1."
