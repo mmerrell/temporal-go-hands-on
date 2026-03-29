@@ -11,7 +11,7 @@ import (
 )
 
 func main() {
-	c, err := client.Dial(client.Options{})
+	c, err := client.Dial(client.Options{HostPort: "127.0.0.1:7233"})
 	if err != nil {
 		log.Fatalln("Unable to create client:", err)
 	}
