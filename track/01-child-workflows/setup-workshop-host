@@ -1,9 +1,0 @@
-#!/bin/bash
-set -euo pipefail
-
-rm -rf /workspace/exercise /workspace/solution
-cp -r /workspace/exercises/lab1-child-workflows/practice /workspace/exercise
-cp -r /workspace/exercises/lab1-child-workflows/solution /workspace/solution
-
-echo "Exercise 1 ready."
-echo "Files are in /workspace/exercise/"

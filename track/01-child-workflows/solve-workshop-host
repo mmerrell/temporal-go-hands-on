@@ -1,5 +1,0 @@
-#!/bin/bash
-cp /workspace/solution/inventory_workflow.go /workspace/exercise/inventory_workflow.go
-cp /workspace/solution/fulfillment_workflow.go /workspace/exercise/fulfillment_workflow.go
-cd /workspace/exercise && go build ./...
-echo "Solution applied. Review inventory_workflow.go and fulfillment_workflow.go."
