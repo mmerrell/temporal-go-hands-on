@@ -1,5 +1,6 @@
 ---
 slug: converting
+id: tnpcxrrbxa8k
 type: challenge
 title: 'Exercise 1: Converting a Workflow'
 teaser: Replace a fragile retry loop with Temporal Activities and a durable Workflow.
@@ -17,26 +18,31 @@ notes:
 
     Hit **Start** when you're ready.
 tabs:
-- title: VS Code
+- id: crr6c0zsxnef
+  title: VS Code
   type: service
   hostname: workshop-host
   path: ?folder=/workspace/exercise&openFile=/workspace/exercise/pipeline.go&openFile=/workspace/exercise/workflow.go
   port: 8443
-- title: Terminal 1 - Worker
+- id: jku51xpzcbvb
+  title: Terminal 1 - Worker
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Terminal 2 - Starter
+- id: xzxd14dyoqyy
+  title: Terminal 2 - Starter
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Temporal Web UI
+- id: qkcpgjlwvuaf
+  title: Temporal Web UI
   type: service
   hostname: workshop-host
   path: /
   port: 8080
 difficulty: basic
 timelimit: 2400
+enhanced_loading: null
 ---
 
 ## Exercise 1: Converting a Workflow

@@ -1,5 +1,6 @@
 ---
 slug: local-activities
+id: kby5u4sntxvp
 type: challenge
 title: 'Exercise 4: Local Activities'
 teaser: Move fast in-process steps to local activities to reduce task queue round-trips.
@@ -18,26 +19,31 @@ notes:
 
     Hit **Start** when you're ready.
 tabs:
-- title: VS Code
+- id: tckpi2a8mwtd
+  title: VS Code
   type: service
   hostname: workshop-host
   path: ?folder=/workspace/exercise&openFile=/workspace/exercise/fulfillment_workflow.go&openFile=/workspace/exercise/local_activities.go
   port: 8443
-- title: Terminal 1 - Worker
+- id: imtw6lyxjpma
+  title: Terminal 1 - Worker
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Terminal 2 - Starter
+- id: t11jlutq46l2
+  title: Terminal 2 - Starter
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Temporal Web UI
+- id: oocix3bslhma
+  title: Temporal Web UI
   type: service
   hostname: workshop-host
   path: /
   port: 8080
 difficulty: basic
 timelimit: 3600
+enhanced_loading: null
 ---
 
 ## Exercise 4: Local Activities

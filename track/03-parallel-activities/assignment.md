@@ -1,8 +1,10 @@
 ---
 slug: parallel-activities
+id: vl4lpsmcpxmj
 type: challenge
 title: 'Exercise 3: Parallel Activities'
-teaser: Fan out warehouse checks concurrently using workflow.Go() goroutines and a channel.
+teaser: Fan out warehouse checks concurrently using workflow.Go() goroutines and a
+  channel.
 notes:
 - type: text
   contents: |-
@@ -17,26 +19,31 @@ notes:
 
     Hit **Start** when you're ready.
 tabs:
-- title: VS Code
+- id: 5jelj1nxcokn
+  title: VS Code
   type: service
   hostname: workshop-host
   path: ?folder=/workspace/exercise&openFile=/workspace/exercise/inventory_workflow.go
   port: 8443
-- title: Terminal 1 - Worker
+- id: fegmmnicvsyt
+  title: Terminal 1 - Worker
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Terminal 2 - Starter
+- id: axvo0xsy6uje
+  title: Terminal 2 - Starter
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Temporal Web UI
+- id: wwlfwt063dys
+  title: Temporal Web UI
   type: service
   hostname: workshop-host
   path: /
   port: 8080
 difficulty: basic
 timelimit: 3600
+enhanced_loading: null
 ---
 
 ## Exercise 3: Parallel Activities

@@ -1,8 +1,10 @@
 ---
 slug: child-workflows
+id: mtqaqpowtyxq
 type: challenge
 title: 'Exercise 2: Child Workflows'
-teaser: Extract inventory reservation into a dedicated child workflow with its own history and retry boundary.
+teaser: Extract inventory reservation into a dedicated child workflow with its own
+  history and retry boundary.
 notes:
 - type: text
   contents: |-
@@ -19,26 +21,31 @@ notes:
 
     Hit **Start** when you're ready.
 tabs:
-- title: VS Code
+- id: 56y58nlcwxt4
+  title: VS Code
   type: service
   hostname: workshop-host
   path: ?folder=/workspace/exercise&openFile=/workspace/exercise/inventory_workflow.go&openFile=/workspace/exercise/fulfillment_workflow.go
   port: 8443
-- title: Terminal 1 - Worker
+- id: qz5d4wjoessp
+  title: Terminal 1 - Worker
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Terminal 2 - Starter
+- id: 4pxzbmsfqd7x
+  title: Terminal 2 - Starter
   type: terminal
   hostname: workshop-host
   workdir: /workspace/exercise
-- title: Temporal Web UI
+- id: x1l5o9lhrvpd
+  title: Temporal Web UI
   type: service
   hostname: workshop-host
   path: /
   port: 8080
 difficulty: basic
 timelimit: 2400
+enhanced_loading: null
 ---
 
 ## Exercise 2: Child Workflows
