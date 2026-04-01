@@ -1,7 +1,7 @@
 ---
 slug: child-workflows
 type: challenge
-title: 'Exercise 1: Child Workflows'
+title: 'Exercise 2: Child Workflows'
 teaser: Extract inventory reservation into a dedicated child workflow with its own history and retry boundary.
 notes:
 - type: text
@@ -41,7 +41,7 @@ difficulty: basic
 timelimit: 2400
 ---
 
-## Exercise 1: Child Workflows
+## Exercise 2: Child Workflows
 
 Open **`inventory_workflow.go`** and **`fulfillment_workflow.go`** in VS Code.
 Look for `// TODO` comments — they mark everything you need to implement.
