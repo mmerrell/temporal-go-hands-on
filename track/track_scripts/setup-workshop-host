@@ -6,7 +6,7 @@ apt-get update && apt-get install -y --no-install-recommends \
     wget curl git vim nano unzip ca-certificates bash-completion
 
 # ─── Go ───────────────────────────────────────────────────────────────────────
-GO_VERSION=1.22.5
+GO_VERSION=1.23.0
 wget -q "https://go.dev/dl/go${GO_VERSION}.linux-amd64.tar.gz" -O /tmp/go.tar.gz
 rm -rf /usr/local/go
 tar -C /usr/local -xzf /tmp/go.tar.gz
@@ -107,11 +107,15 @@ docker rm tmp-sandbox
 
 # ─── Pre-warm Go module cache ─────────────────────────────────────────────────
 for dir in \
-    /workspace/exercises/lab1-child-workflows/practice \
-    /workspace/exercises/lab1-child-workflows/solution \
-    /workspace/exercises/lab2-local-and-parallel/practice \
-    /workspace/exercises/lab2-local-and-parallel/solution; do
-    echo "Downloading Go modules for $dir..."
+    /workspace/exercises/1_converting/practice \
+    /workspace/exercises/1_converting/solution \
+    /workspace/exercises/2_child_workflows/practice \
+    /workspace/exercises/2_child_workflows/solution \
+    /workspace/exercises/3_parallel_activities/practice \
+    /workspace/exercises/3_parallel_activities/solution \
+    /workspace/exercises/4_local_activities/practice \
+    /workspace/exercises/4_local_activities/solution; do
+    echo "Warming Go module cache for $dir..."
     (cd "$dir" && go mod download)
 done
 
