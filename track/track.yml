@@ -1,16 +1,17 @@
 slug: temporal-go-hands-on
-id: thkynjg9lgsp
 title: Temporal Go SDK – Hands-On Lab
-teaser: Build a durable order-fulfillment system with the Temporal Go SDK — child
-  workflows, parallel fan-out, and local activities.
+teaser: Build a durable order-fulfillment system with the Temporal Go SDK — activities,
+  child workflows, parallel fan-out, and local activities.
 description: |-
-  Progressive coding challenges using the Temporal Go SDK. Each challenge drops you into a
+  Four progressive coding challenges using the Temporal Go SDK. Each challenge drops you into a
   partially-implemented order fulfillment workflow and asks you to fill in the missing pieces.
 
   **What you'll build:**
 
-  - **Exercise 1 – Child Workflows:** Extract inventory reservation into a dedicated child workflow with its own history and retry boundary.
-  - **Exercise 2 – Parallel Fan-Out + Local Activities:** Fan out warehouse checks concurrently with `workflow.Go()` goroutines, and move fast in-process steps to local activities.
+  - **Exercise 1 – Converting a Workflow:** Replace a fragile retry loop with Temporal Activities and a durable Workflow.
+  - **Exercise 2 – Child Workflows:** Extract inventory reservation into a dedicated child workflow with its own history and retry boundary.
+  - **Exercise 3 – Parallel Activities:** Fan out warehouse checks concurrently with `workflow.Go()` goroutines and a `workflow.Channel`.
+  - **Exercise 4 – Local Activities:** Move fast in-process steps to local activities to reduce Temporal Cloud Actions.
 
   Each challenge includes a **Web UI** tab so you can watch your workflows execute in real time, and a **Solve** button if you get stuck.
 
@@ -33,5 +34,4 @@ lab_config:
   hideStopButton: false
   default_layout: AssignmentLeft
   default_layout_sidebar_size: 35
-checksum: "15248634208067158660"
 enhanced_loading: false

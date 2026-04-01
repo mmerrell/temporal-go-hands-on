@@ -1,0 +1,4 @@
+#!/bin/bash
+cp /workspace/solution/workflow.go /workspace/exercise/workflow.go
+cd /workspace/exercise && go build ./...
+echo "Solution applied. Review workflow.go to see the completed implementation."

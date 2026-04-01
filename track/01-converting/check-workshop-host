@@ -1,0 +1,46 @@
+#!/bin/bash
+EXERCISE_DIR="/workspace/exercise"
+WORKFLOW="$EXERCISE_DIR/workflow.go"
+
+fail() { echo "FAIL: $1"; exit 1; }
+pass() { echo "PASS: $1"; }
+
+if grep -q "_ = fa" "$WORKFLOW"; then
+  fail "workflow.go still has the placeholder '_ = fa'. Implement the activity calls."
+fi
+pass "Placeholder removed"
+
+if ! grep -q "ExecuteActivity" "$WORKFLOW"; then
+  fail "workflow.go is missing workflow.ExecuteActivity() calls. Implement Parts A, B, and C."
+fi
+pass "ExecuteActivity calls present"
+
+if ! grep -q "ReserveInventory" "$WORKFLOW"; then
+  fail "workflow.go is not calling ReserveInventory."
+fi
+pass "ReserveInventory called"
+
+if ! grep -q "ProcessPayment" "$WORKFLOW"; then
+  fail "workflow.go is not calling ProcessPayment."
+fi
+pass "ProcessPayment called"
+
+if ! grep -q "DispatchToFulfillment" "$WORKFLOW"; then
+  fail "workflow.go is not calling DispatchToFulfillment."
+fi
+pass "DispatchToFulfillment called"
+
+if grep -q "return OrderResult{}, nil" "$WORKFLOW"; then
+  fail "workflow.go still returns an empty OrderResult{}. Build and return a completed OrderResult."
+fi
+pass "OrderResult returned"
+
+echo "Running go build..."
+cd "$EXERCISE_DIR"
+if ! go build ./... 2>&1; then
+  fail "Project does not build. Fix compilation errors above and try again."
+fi
+pass "Project builds successfully"
+
+echo ""
+echo "All checks passed! Watch the Temporal Web UI — activities retry automatically when they fail."

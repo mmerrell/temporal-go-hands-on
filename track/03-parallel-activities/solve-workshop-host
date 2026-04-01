@@ -1,0 +1,4 @@
+#!/bin/bash
+cp /workspace/solution/inventory_workflow.go /workspace/exercise/inventory_workflow.go
+cd /workspace/exercise && go build ./...
+echo "Solution applied. Review inventory_workflow.go."

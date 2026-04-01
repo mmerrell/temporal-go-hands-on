@@ -1,0 +1,36 @@
+#!/bin/bash
+EXERCISE_DIR="/workspace/exercise"
+FULFILLMENT="$EXERCISE_DIR/fulfillment_workflow.go"
+
+fail() { echo "FAIL: $1"; exit 1; }
+pass() { echo "PASS: $1"; }
+
+if ! grep -q "LocalActivityOptions" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is missing workflow.LocalActivityOptions."
+fi
+pass "LocalActivityOptions present"
+
+if ! grep -q "ExecuteLocalActivity" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is missing workflow.ExecuteLocalActivity() calls."
+fi
+pass "ExecuteLocalActivity calls present"
+
+if ! grep -q "ValidateOrder" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is not calling ValidateOrder as a local activity."
+fi
+pass "ValidateOrder called"
+
+if ! grep -q "FraudCheck" "$FULFILLMENT"; then
+  fail "fulfillment_workflow.go is not calling FraudCheck as a local activity."
+fi
+pass "FraudCheck called"
+
+echo "Running go build..."
+cd "$EXERCISE_DIR"
+if ! go build ./... 2>&1; then
+  fail "Project does not build. Fix compilation errors above and try again."
+fi
+pass "Project builds successfully"
+
+echo ""
+echo "All checks passed! Look for MarkerRecorded events in the Web UI instead of schedule/start/complete triplets."
